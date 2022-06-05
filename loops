@@ -1,0 +1,67 @@
+/*
+caUsingLoop6
+Haeun Oh
+25/03/2019
+finding the lowest and highest values
+ */
+package causingloops6;
+import java.util.Scanner;
+
+
+public class CaUsingLoops6 {
+
+    public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+         
+        int intNum;
+        int intHigh, intLow, intIndex;  //Saving the value of the highest and lowest     [the decisions happens within the loop but only printed after or outside the loop
+        
+        //position
+        int intHPos, intLPos;
+        
+        intHigh = -1;   //Make high a number that can exist within the scenario e.g -1
+        intLow = 999;    //So high that it can't be considered low
+        
+        intHPos = -1;
+        intLPos = -1;
+        
+        for (int intCount = 1; intCount<= 10; intCount++)
+        {
+            System.out.print("Enter number: ");
+            intNum = sc.nextInt();
+            
+            if (intNum > intHigh)
+                intHigh = intNum;    //to reset the value of high to the highest whn a new number is entered
+                intHPos = intCount;       //The intCount represents the "number of data entered" hence...
+                
+            if (intNum < intLow)
+                intLow = intNum;    //to reset the value of the low to the lowest when a new number in entered 
+                intLPos = intCount;
+        }
+        
+            System.out.println("High is:" + intHigh + "position is " + intHPos);
+            System.out.println("Low is: " + intLow + "position is " + intLPos);
+         
+ 
+    }
+    
+}
+
+/*
+        Scanner sc = new Scanner(System.in);
+
+        int intNum;
+
+        System.out.print("Please enter a number [0 to stop]");;
+        intNum = sc.nextInt();
+        
+        int intNum2;
+        System.out.print("Please enter a number [0 to stop]");;
+        intNum2 = sc.nextInt();
+        
+        if (intNum > intNum2)
+            System.out.println("Num 1 is bigger than Num 2");
+        else 
+            System.out.println("Num 2 is bigger than Num 1");   //Not wrong but only 2 numbers can be compared and is inefficient
+
+*/
